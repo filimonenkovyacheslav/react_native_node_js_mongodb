@@ -1,0 +1,76 @@
+version: '3'
+
+networks:
+  default:
+    driver: bridge
+
+services: 
+  med-front:
+    user: 'node'
+    build:
+      context: ./images/alpine/frontend
+      dockerfile: Dockerfile
+    container_name: frontend-medicial
+    volumes: 
+      - ./app/frontend:/app/
+    networks:
+      - default
+    environment:
+      - NODE_ENV=development
+      - NPM_CONFIG_LOGLEVEL=warn
+    ports: 
+      - 3000:3000
+    links: 
+      - med-back
+
+  med-back:
+    user: 'node'
+    build:
+      context: ./images/alpine/backend
+      dockerfile: Dockerfile
+    container_name: backend-medicial
+    volumes: 
+      - ./app/backend:/app/
+    networks:
+      - default
+    environment:
+      - NODE_ENV=development
+      - NPM_CONFIG_LOGLEVEL=warn
+    ports: 
+      - 8000:8000
+    links: 
+      - mongo
+    depends_on: 
+      - mongo
+
+  mongo:
+    image: mongo
+    restart: always
+    networks:
+      - default
+    ports: 
+      - 27017:27017
+    volumes: 
+      - ./data/mongoDB:/data/db/
+    environment:
+      MONGODB_USER: admin
+      MONGODB_PASS: admin
+      MONGODB_DATABASE: 'medicial'
+  
+  mongo-express:
+    image: mongo-express
+    restart: always
+    networks:
+      - default
+    ports: 
+      - 8081:8081
+    links: 
+      - mongo
+    depends_on:
+      - mongo
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongo
+      ME_CONFIG_MONGODB_URL: mongodb://mongo:27017/medicial
+      MMONGODB_USER: admin
+      MONGODB_PASS: admin
+      MONGODB_DATABASE: 'medicial'

@@ -1,0 +1,53 @@
+{
+  "title": "register new ride",
+  "type": "object",
+  "properties": {
+    "routeName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "pointOfDeparture": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "pointOfArrival": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "mileage": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "driverName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "carNumber": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "startTime": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "endTime": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "required": [
+    "routeName",
+    "pointOfDeparture",
+    "pointOfArrival",
+    "mileage",
+    "driverName",
+    "carNumber",
+    "startTime",
+    "endTime"
+  ]
+}

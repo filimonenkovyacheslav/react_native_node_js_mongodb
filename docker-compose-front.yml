@@ -1,0 +1,17 @@
+version: '3'
+
+services: 
+  med-front:
+    user: 'node'
+    build:
+      context: ./images/alpine/frontend
+      dockerfile: Dockerfile
+    container_name: frontend-medicial
+    # restart: always
+    volumes: 
+      - ./app/frontend:/app/
+    environment:
+      - NODE_ENV=development
+      - NPM_CONFIG_LOGLEVEL=warn
+    ports: 
+      - 3000:3000

@@ -1,0 +1,32 @@
+{
+  "title": "register new driver",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "surname": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "email": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "phone": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    }
+  },
+  "required": [
+    "name",
+    "surname",
+    "email",
+    "phone"
+  ]
+}

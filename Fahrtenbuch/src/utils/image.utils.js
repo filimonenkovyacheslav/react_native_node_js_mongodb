@@ -1,0 +1,31 @@
+const images = {
+  logo: require('../assets/logo.png'),
+  car: require('../assets/car.png'),
+  car_red: require('../assets/car_red.png'),
+  avatar: require('../assets/avatar.png'),
+  phone: require('../assets/phone.png'),
+  mail: require('../assets/mail.png'),
+  calendar: require('../assets/calendar.png'),
+  clock: require('../assets/clock.png'),
+  clockwise: require('../assets/clockwise.png'),
+  wheel: require('../assets/wheel.png'),
+  point: require('../assets/point.png'),
+  point_big: require('../assets/point_big.png'),
+  flag_ge: require('../assets/flag-germanii.png'),
+  flag_it: require('../assets/flag-italii.png'),
+  flag_ne: require('../assets/flag-niderlandov.png'),
+  cheked: require('../assets/cheked.png'),
+  uncheked: require('../assets/uncheked.png'),
+  uncheked_white: require('../assets/uncheked_white.png'),
+  wheel_big: require('../assets/wheel_big.png'),
+  arrow: require('../assets/arrow.png'),
+  logout: require('../assets/logout.png'),
+  car_white: require('../assets/car_white.png'),
+  wheel_white: require('../assets/wheel_white.png'),
+  settings: require('../assets/settings.png'),
+  tag_white: require('../assets/tag_white.png'),
+  tag: require('../assets/tag.png'),
+  logo_blink: require('../assets/logo_blink.png')
+}
+
+export default images
